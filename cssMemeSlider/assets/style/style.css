@@ -1,0 +1,45 @@
+.wrapper {
+    max-width: calc(100vw - 30%);
+    margin: auto;
+    margin-top: 20vh;
+    position: relative;
+}
+
+.slider {
+
+}
+
+.slider_item {
+    display: none;
+    text-align: center;
+}
+
+.input {
+    display: none;
+}
+
+.input:checked + .slider_item {
+    display: block;
+}
+
+.slider_item img {
+    width: 30em;
+    height: 30em;
+    border-radius: 1em;
+}
+
+.dot {
+    text-align: center;
+}
+
+.dot-item {
+    display: inline-block;
+    margin: 0 auto;
+    height: 1em;
+    width: 1em;
+    border-radius: 1em;
+    background-color: #bbb;
+    cursor: pointer;
+}
+
+
