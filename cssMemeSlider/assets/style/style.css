@@ -6,8 +6,16 @@
 }
 
 .slider {
-
+    display: grid; 
+    grid-template-columns: repeat(2, 50%); 
+    grid-template-rows: 100% 10%; 
+    gap: 1em 0; 
+    grid-template-areas: 
+      "best_memes best_memes"
+      "best_jokes dot"; 
 }
+.best_memes { grid-area: best_memes; }
+.best_jokes { grid-area: best_jokes; }
 
 .slider_item {
     display: none;
@@ -23,13 +31,15 @@
 }
 
 .slider_item img {
-    width: 30em;
+    width: 63em;
     height: 30em;
+    object-fit: contain;
     border-radius: 1em;
 }
 
 .dot {
-    text-align: center;
+    text-align: end;
+    grid-area: dot;
 }
 
 .dot_item {
