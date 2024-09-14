@@ -32,14 +32,45 @@
     text-align: center;
 }
 
-.dot-item {
+.dot_item {
     display: inline-block;
     margin: 0 auto;
     height: 1em;
     width: 1em;
     border-radius: 1em;
-    background-color: #bbb;
+    border: 0.1em solid #bbb;
+    background-color: #8afff5;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
+.dot_item:hover {
+    background-color: #00ffea;
+}
+
+/* !Эта лапша меняет цвет активной точки, более элегантного решения я не смог выдумать */
+
+.input:checked:nth-of-type(1) ~ .dot .dot_item:nth-of-type(1) {
+    background-color: gray;
+    border: 0.1em solid;
+    transition: background-color 0.3s;
+}
+
+.input:checked:nth-of-type(2) ~ .dot .dot_item:nth-of-type(2) {
+    background-color: gray;
+    border: 0.1em solid;
+    transition: background-color 0.3s;
+}
+
+.input:checked:nth-of-type(3) ~ .dot .dot_item:nth-of-type(3) {
+    background-color: gray;
+    border: 0.1em solid;
+    transition: background-color 0.3s;
+}
+
+.input:checked:nth-of-type(4) ~ .dot .dot_item:nth-of-type(4) {
+    background-color: gray;
+    border: 0.1em solid;
+    transition: background-color 0.3s;
+}
 
