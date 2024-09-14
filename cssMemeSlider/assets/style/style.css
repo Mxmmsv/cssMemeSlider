@@ -2,7 +2,6 @@
     max-width: calc(100vw - 30%);
     margin: auto;
     margin-top: 20vh;
-    position: relative;
 }
 
 .slider {
@@ -11,10 +10,9 @@
     grid-template-rows: 100% 10%; 
     gap: 1em 0; 
     grid-template-areas: 
-      "best_memes best_memes"
+      "a a"
       "best_jokes dot"; 
 }
-.best_memes { grid-area: best_memes; }
 .best_jokes { grid-area: best_jokes; }
 
 .slider_item {
@@ -45,8 +43,8 @@
 .dot_item {
     display: inline-block;
     margin: 0 auto;
-    height: 1em;
-    width: 1em;
+    height: 2em;
+    width: 2em;
     border-radius: 1em;
     border: 0.1em solid #bbb;
     background-color: #8afff5;
