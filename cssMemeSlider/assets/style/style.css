@@ -11,12 +11,13 @@
     gap: 1em 0; 
     grid-template-areas: 
       "a a"
-      "best_jokes dot"; 
+      "best_jokes dot";
 }
 
 .slider_item {
     display: none;
-    text-align: center;
+    margin: 0 auto;
+    grid-area: a;
 }
 
 .input {
@@ -28,9 +29,8 @@
 }
 
 .slider_item img {
-    width: 63em;
+    width: 30em;
     height: 30em;
-    object-fit: contain;
     border-radius: 1em;
 }
 
@@ -87,6 +87,8 @@
 
 .jokes_item {
     display: none;
+    font-weight: 700;
+    font-size: 30px;
 }
 
 /* !Меняет активную подпись к картинке*/
