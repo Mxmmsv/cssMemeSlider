@@ -1,5 +1,5 @@
 /* для таблета */
-@media (min-width: 48em) and (max-width: 90em) {
+@media (min-width: 48em) and (max-width: 89em) {
     .wrapper {
         margin-top: 5vh;
         max-height: 100vh;

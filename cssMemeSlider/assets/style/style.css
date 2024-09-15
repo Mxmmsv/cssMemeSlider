@@ -61,13 +61,16 @@ body {
 }
 
 .dot {
-    text-align: end;
+    display: flex;
+    gap: 1em;
+    justify-content: end;
     grid-area: dot;
 }
 
 .dot_item {
-    display: inline-block;
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 2em;
     width: 2em;
     border-radius: 1em;
@@ -81,6 +84,15 @@ body {
     background-color: #83d2d2;
 }
 
+.click_area {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    padding: 1.5em 1.5em;
+    box-sizing: content-box;
+}
+
 /* !Эта лапша меняет цвет активной точки, более элегантного решения я не смог выдумать */
 
 .input:checked:nth-of-type(1) ~ .dot .dot_item:nth-of-type(1),
@@ -90,6 +102,7 @@ body {
     background-color: gray;
     border: 0.1em solid;
     transition: background-color 0.3s;
+    cursor: initial;
 }
 
 .best_jokes { 
