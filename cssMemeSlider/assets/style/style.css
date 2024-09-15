@@ -1,7 +1,7 @@
 .wrapper {
     max-width: calc(100vw - 30%);
     margin: auto;
-    margin-top: 20vh;
+    margin-top: 15vh;
 }
 
 .slider {
@@ -13,7 +13,6 @@
       "a a"
       "best_jokes dot"; 
 }
-.best_jokes { grid-area: best_jokes; }
 
 .slider_item {
     display: none;
@@ -82,3 +81,27 @@
     transition: background-color 0.3s;
 }
 
+.best_jokes { 
+    grid-area: best_jokes;
+}
+
+.jokes_item {
+    display: none;
+}
+
+/* !Меняет активную подпись к картинке*/
+.input:checked:nth-of-type(1) ~ .best_jokes .jokes_item:nth-of-type(1) {
+    display: block;
+}
+
+.input:checked:nth-of-type(2) ~ .best_jokes .jokes_item:nth-of-type(2) {
+    display: block;
+}
+
+.input:checked:nth-of-type(3) ~ .best_jokes .jokes_item:nth-of-type(3) {
+    display: block;
+}
+
+.input:checked:nth-of-type(4) ~ .best_jokes .jokes_item:nth-of-type(4) {
+    display: block;
+}
