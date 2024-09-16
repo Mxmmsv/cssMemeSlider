@@ -1,0 +1,141 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    background: linear-gradient(#6fad4f, #83d2d2);
+}
+
+.wrapper {
+    max-width: calc(100vw - 30%);
+    height: 100vh;
+    margin: auto;
+    margin-top: 15vh;
+}
+
+.slider {
+    display: grid; 
+    grid-template-columns: repeat(2, 35%); 
+    grid-template-rows: 100% 10%; 
+    gap: 1em 0; 
+    grid-template-areas: 
+      "a a"
+      "best_jokes dot";
+    justify-content: center;
+}
+
+.slider_item {
+    grid-area: a;
+    opacity: 0;
+    transform: translateX(10em);
+    visibility: hidden;
+    transition: opacity 0.3s, transform 0.5s;
+    box-shadow: 2em 2em 6em rgb(39, 46, 13);
+    border-radius: 1em;
+    max-height: 30em;
+}
+
+.input {
+    display: none;
+}
+
+.input:checked + .slider_item {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+.slider_item img {
+    width: 100%;
+    height: 30em;
+    object-fit: fill;
+    border-radius: 1em;
+}
+
+.dot {
+    display: flex;
+    gap: 1em;
+    justify-content: end;
+    grid-area: dot;
+}
+
+.dot_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 2em;
+    width: 2em;
+    border-radius: 1em;
+    border: 0.1em solid #000000;
+    background-color: #594fe9;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot_item:hover {
+    background-color: #83d2d2;
+}
+
+.dot_item:active {
+    transform: scale(1.5);
+}
+
+.click_area {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    text-align: center;
+    padding: 1.5em 1.5em;
+    box-sizing: content-box;
+}
+
+/* !Эта лапша меняет цвет активной точки, более элегантного решения я не смог выдумать */
+
+.input:checked:nth-of-type(1) ~ .dot .dot_item:nth-of-type(1),
+.input:checked:nth-of-type(2) ~ .dot .dot_item:nth-of-type(2),
+.input:checked:nth-of-type(3) ~ .dot .dot_item:nth-of-type(3),
+.input:checked:nth-of-type(4) ~ .dot .dot_item:nth-of-type(4) {
+    background-color: gray;
+    border: 0.1em solid;
+    transition: background-color 0.3s;
+    cursor: initial;
+}
+
+.best_jokes { 
+    grid-area: best_jokes;
+    text-align: left;
+    display: grid;
+    grid-template-rows: 2em;
+}
+
+.jokes_item {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 2em;
+    opacity: 0;
+    transform: translateX(10em);
+    visibility: hidden;
+    transition: opacity 0.3s, transform 0.5s;
+    z-index: 0;
+    grid-area: 1 / 1;
+}
+
+/* !Меняет активную подпись к картинке*/
+.input:checked:nth-of-type(1) ~ .best_jokes .jokes_item:nth-of-type(1),
+.input:checked:nth-of-type(2) ~ .best_jokes .jokes_item:nth-of-type(2),
+.input:checked:nth-of-type(3) ~ .best_jokes .jokes_item:nth-of-type(3),
+.input:checked:nth-of-type(4) ~ .best_jokes .jokes_item:nth-of-type(4) {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+    transition: opacity 0.5s, transform 0.5s;
+    z-index: 1;
+}

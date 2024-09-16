@@ -1,0 +1,28 @@
+/* для таблета */
+@media (min-width: 48em) and (max-width: 89em) {
+    .wrapper {
+        margin-top: 5vh;
+        max-height: 100vh;
+    }
+}
+/* 47.938 */
+@media (min-width: 20em) and (max-width:48em) {
+    .wrapper {
+        margin-top: 5vh;
+        max-width: 90%;
+    }
+
+    .slider {
+        grid-template-columns: 50%; 
+        grid-template-rows: 80% 10% 10%; 
+        gap: 1.5em 0;
+        grid-template-areas: 
+          "a a"
+          "dot dot"
+          "best_jokes best_jokes";
+    }
+
+    .dot {
+        justify-content: center;
+    }
+}
